@@ -318,7 +318,7 @@ if st.button("Solve, Visualize & Analyze", type="primary"):
             st.divider()
             st.subheader("5. Final Result")
             c1, c2 = st.columns(2)
-            c1.success(f"**Optimal Z ({obj_type}) = {z_val:.4f}**")
+            c1.metric(label=f"Optimal Z ({obj_type})", value=f"{z_val:.4f}")
             c2.write("**Decision Variables:**"); c2.json(vars_val)
             
             st.divider()
@@ -336,3 +336,4 @@ if st.button("Solve, Visualize & Analyze", type="primary"):
                 
     except Exception as e:
         st.error(f"Error during calculation: {e}")
+
